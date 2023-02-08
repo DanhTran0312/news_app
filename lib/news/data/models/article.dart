@@ -25,17 +25,23 @@ class Article extends Equatable {
   factory Article.fromJson(Map<String, dynamic> data) =>
       _$ArticleFromJson(data);
 
-  /// A description for source
-  final Source source;
-
   /// A description for author
   final String? author;
 
-  /// A description for title
-  final String? title;
+  /// A description for content
+  final String? content;
 
   /// A description for description
   final String? description;
+
+  /// A description for pubDate
+  final String? publishedAt;
+
+  /// A description for source
+  final Source source;
+
+  /// A description for title
+  final String? title;
 
   /// A description for articleUrl
   final String? url;
@@ -43,11 +49,17 @@ class Article extends Equatable {
   /// A description for imageUrl
   final String? urlToImage;
 
-  /// A description for pubDate
-  final String? publishedAt;
-
-  /// A description for content
-  final String? content;
+  @override
+  List<Object?> get props => [
+        source,
+        author,
+        title,
+        description,
+        url,
+        urlToImage,
+        publishedAt,
+        content,
+      ];
 
   /// Creates a copy of the current Article with property changes
   Article copyWith({
@@ -71,18 +83,6 @@ class Article extends Equatable {
       content: content ?? this.content,
     );
   }
-
-  @override
-  List<Object?> get props => [
-        source,
-        author,
-        title,
-        description,
-        url,
-        urlToImage,
-        publishedAt,
-        content,
-      ];
 
   /// Creates a Json map from a Article
   Map<String, dynamic> toJson() => _$ArticleToJson(this);

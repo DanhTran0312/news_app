@@ -24,7 +24,7 @@ class NewsPage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => _newsCubit..getNews(),
+          create: (context) => _newsCubit..fetchNews(),
         ),
         BlocProvider(
           create: (context) => _webViewCubit,
@@ -34,7 +34,7 @@ class NewsPage extends StatelessWidget {
         body: SmartRefresher(
           header: const MaterialClassicHeader(),
           controller: _newsCubit.refreshController,
-          onRefresh: _newsCubit.getNews,
+          onRefresh: _newsCubit.fetchNews,
           child: const NewsView(),
         ),
       ),

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:news_app_test/news/cubit/cubit.dart';
 import 'package:news_app_test/news/widgets/article_tile.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 /// {@template news_body}
 /// Body of the NewsPage.

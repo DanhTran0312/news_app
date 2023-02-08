@@ -1,6 +1,5 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app_test/news/cubit/web_view_cubit.dart';
 import 'package:news_app_test/news/news.dart';
 
 class App extends StatelessWidget {
@@ -13,9 +12,11 @@ class App extends StatelessWidget {
 
   final NewsCubit _newsCubit;
   final WebViewCubit _webViewCubit;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: FlexThemeData.light(
         scheme: FlexScheme.blue,
         surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,

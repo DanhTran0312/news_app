@@ -14,7 +14,6 @@ class WebViewBody extends StatelessWidget {
     return BlocBuilder<WebViewCubit, WebViewState>(
       bloc: _webViewCubit,
       builder: (context, state) {
-        print(state);
         if (state is WebViewInitial) {
           return const Center(
             child: CircularProgressIndicator(),

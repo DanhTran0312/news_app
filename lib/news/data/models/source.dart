@@ -23,6 +23,12 @@ class Source extends Equatable {
   /// A description for name
   final String? name;
 
+  @override
+  List<Object?> get props => [
+        id,
+        name,
+      ];
+
   /// Creates a copy of the current Source with property changes
   Source copyWith({
     String? id,
@@ -33,12 +39,6 @@ class Source extends Equatable {
       name: name ?? this.name,
     );
   }
-
-  @override
-  List<Object?> get props => [
-        id,
-        name,
-      ];
 
   /// Creates a Json map from a Source
   Map<String, dynamic> toJson() => _$SourceToJson(this);

@@ -1,5 +1,5 @@
 name: news_app_test
-description: A Very Good Project created by Very Good CLI.
+description: A simple app to get the lastest news from the internet across the world.
 version: 1.0.0+1
 publish_to: none
 

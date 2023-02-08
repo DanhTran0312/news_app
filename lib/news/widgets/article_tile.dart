@@ -24,18 +24,19 @@ class ArticleTile extends StatelessWidget {
         )
         .abs();
     final publishedAtString = _getPublishedAtString(publishedAt);
+    final webViewCubit = context.read<WebViewCubit>();
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(
         vertical: 15,
         horizontal: 20,
       ),
       onTap: () {
-        context.read<WebViewCubit>().openUrl(article.url!);
+        webViewCubit.openUrl(article.url!);
         Navigator.push(
           context,
-          MaterialPageRoute(
+          MaterialPageRoute<WebViewPage>(
             builder: (context) => WebViewPage(
-              webViewCubit: context.read<WebViewCubit>(),
+              webViewCubit: webViewCubit,
             ),
           ),
         );
@@ -53,10 +54,11 @@ class ArticleTile extends StatelessWidget {
           const SizedBox(height: 5),
           if (urlToImage.isNotEmpty)
             ClipRRect(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(12),
               child: Image.network(
                 urlToImage,
                 fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => Container(),
               ),
             )
           else

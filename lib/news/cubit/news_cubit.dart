@@ -19,10 +19,10 @@ class NewsCubit extends Cubit<NewsState> {
 
   RefreshController get refreshController => _refreshController;
 
-  Future<void> getNews() async {
+  Future<void> fetchNews() async {
     try {
       emit(const NewsLoading());
-      final articles = await _newsRepository.getArticles();
+      final articles = await _newsRepository.fetchArticles();
       emit(NewsLoaded(articles));
       _refreshController.refreshCompleted();
     } on DioError catch (e) {
