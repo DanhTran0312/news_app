@@ -9,6 +9,15 @@ abstract class WebViewState extends Equatable {
 
 class WebViewInitial extends WebViewState {}
 
+class WebViewLoading extends WebViewState {
+  const WebViewLoading({required this.url});
+
+  final String url;
+
+  @override
+  List<Object> get props => [url];
+}
+
 class WebViewSuccess extends WebViewState {
   const WebViewSuccess({required this.url});
 

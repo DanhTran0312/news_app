@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_app_test/news/cubit/web_view_cubit.dart';
 import 'package:news_app_test/news/data/models/models.dart';
+import 'package:news_app_test/news/view/web_view_page.dart';
 
 class ArticleTile extends StatelessWidget {
   const ArticleTile({
@@ -26,7 +29,17 @@ class ArticleTile extends StatelessWidget {
         vertical: 15,
         horizontal: 20,
       ),
-      onTap: () {},
+      onTap: () {
+        context.read<WebViewCubit>().openUrl(article.url!);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => WebViewPage(
+              webViewCubit: context.read<WebViewCubit>(),
+            ),
+          ),
+        );
+      },
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

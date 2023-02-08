@@ -32,25 +32,18 @@ class NewsBody extends StatelessWidget {
             child: CircularProgressIndicator(),
           );
         } else if (state is NewsLoaded) {
-          return Stack(
-            children: [
-              ListView.separated(
-                physics: const NeverScrollableScrollPhysics(),
-                separatorBuilder: (context, index) => const Divider(
-                  height: 0,
-                ),
-                shrinkWrap: true,
-                itemCount: state.articles!.length,
-                itemBuilder: (context, index) {
-                  return ArticleTile(
-                    article: state.articles![index],
-                  );
-                },
-              ),
-              WebViewWidget(
-                controller: context.read<WebViewCubit>().webViewController,
-              ),
-            ],
+          return ListView.separated(
+            physics: const NeverScrollableScrollPhysics(),
+            separatorBuilder: (context, index) => const Divider(
+              height: 0,
+            ),
+            shrinkWrap: true,
+            itemCount: state.articles!.length,
+            itemBuilder: (context, index) {
+              return ArticleTile(
+                article: state.articles![index],
+              );
+            },
           );
         } else {
           return const Center(

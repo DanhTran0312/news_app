@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app_test/news/cubit/cubit.dart';
-import 'package:news_app_test/news/cubit/web_view_cubit.dart';
 import 'package:news_app_test/news/widgets/news_body.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
