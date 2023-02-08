@@ -16,9 +16,17 @@ To get started, simply clone or download the repository to your local machine. Y
 ## Usage 📖
 
 In order to use the NewsAPI, you will need to sign up for an API key [here](https://newsapi.org/register). Once you have your API key, add it to the `article_repository.dart` file in the following line:
+
 ```dart
 // TODO: Update this with your own API key
 static const String \_apiKey = 'YOUR_API_KEY_HERE';
 ```
+
+## Screenshots 📸
+
+<img src="https://i.imgur.com/WMyvXGf.png" width="400" height="800"> <img src="https://i.imgur.com/LemDPma.png" width="400" height="800">
+<img src="https://i.imgur.com/YqjmFJp.png" width="400" height="800"> <img src="https://i.imgur.com/emhLN96.png" width="400" height="800">
+
 ## License 📝
+
 This project is licensed under the MIT License. Please see the [LICENSE](LICENSE) file for more details.
